@@ -33,11 +33,13 @@ export default class GameContent extends Component {
           Flip me
         </button>
         <img width="100px" src={this.state.flips} alt="" />
-        <ResultCoin
-          result={this.state.result}
-          heads={this.state.heads}
-          tails={this.state.tails}
-        />
+        {this.state.result > 0 && (
+          <ResultCoin
+            result={this.state.result}
+            heads={this.state.heads}
+            tails={this.state.tails}
+          />
+        )}
       </div>
     );
   }
